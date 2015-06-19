@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-12 answer">
+    <h3>{{model.answerTitle}}</h3>
+    <img class="image"{{bind-attr src=model.answerImage}} />
+    <h5>Answered by: {{model.answerName}}</h5>
+    <h4 class="well">{{model.answerDescription}}</h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <button class="btn btn-warning" {{action 'goBack'}}>Back to Question</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <button class="btn btn-danger" {{action 'delete'}}>Delete</button>
+  </div>
+</div>

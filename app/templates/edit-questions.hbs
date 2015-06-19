@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-12 header">
+    Edit Questions
+  </div>
+</div>
+
+{{#each question in model}}
+  <div class="row answer-row">
+    <div class="col col-sm-12">
+      {{#link-to 'edit-question' question.id classNames='link'}}<div class="description">{{question.title}}</div>
+
+      <div class="name">Asked by: {{question.name}}</div>{{/link-to}}
+    </div>
+  </div>
+{{/each}}

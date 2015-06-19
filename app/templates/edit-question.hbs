@@ -1,0 +1,32 @@
+<div class="manage-question">
+  <div class="question">
+    <h3>{{model.title}}</h3>
+    <h5>{{model.description}}</h5>
+    <img class="image"{{bind-attr src=model.image}} /><br />
+    <span class="name">Asked by: {{model.name}}</span>
+  </div>
+</div>
+
+{{#if isUpdating}}
+<div class="row">
+  <div class="col-sm-12">
+    <div class="header">Update Question</div>
+    <form class="edit-question-form well">
+      <div class="form-group">
+        <label for="name">New name</label>
+        {{input  id="name" class="form-control" value=name }}
+        <label for="image">New Picture</label>
+        {{input  id="image" class="form-control" value=image }}
+        <label for="title">Change Title</label>
+        {{input  id="title" class="form-control" value=title }}
+        <label for="description">Change Description</label>
+        {{input  id="description" class="form-control" value=description }}
+      </div>
+      <button class="btn btn-primary" {{action 'editQuestion'}}>Edit Question</button>
+    </form>
+  </div>
+</div>
+{{else}}
+<button class="btn btn-primary" {{action 'update'}}>Update Question</button>
+{{/if}}
+<button class="btn btn-danger" {{action 'delete'}}>Delete</button>
