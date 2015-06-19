@@ -28,11 +28,11 @@
 
 <!-- TOGGLE LIST OF EXISTING QUESTIONS -->
 {{#if isViewing}}
-  {{#each}}
+  {{#each question in model}}
     <div class="row questions">
       <div class="col-sm-12">
-        {{#link-to 'question' id classNames='link'}}<div class="question">{{title}}</div>{{/link-to}}
-        <div class="name">Asked By:{{name}}</div>
+        {{#link-to 'question'  question.id classNames='link'}}<div class="question">{{question.title}}</div>{{/link-to}}
+        <div class="name">Asked By:{{question.name}}</div>
       </div>
     </div>
   {{/each}}

@@ -37,7 +37,6 @@ var QuestionsController = {
 
       this.set('isViewing', true);
 
-
     }
   }
 };
