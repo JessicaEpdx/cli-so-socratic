@@ -14,13 +14,13 @@
     <form class="edit-question-form well">
       <div class="form-group">
         <label for="name">New name</label>
-        {{input  id="name" class="form-control" value=name }}
+        {{input  id="name" class="form-control" value=model.name }}
         <label for="image">New Picture</label>
-        {{input  id="image" class="form-control" value=image }}
+        {{input  id="image" class="form-control" value=model.image }}
         <label for="title">Change Title</label>
-        {{input  id="title" class="form-control" value=title }}
+        {{input  id="title" class="form-control" value=model.title }}
         <label for="description">Change Description</label>
-        {{input  id="description" class="form-control" value=description }}
+        {{input  id="description" class="form-control" value=model.description }}
       </div>
       <button class="btn btn-primary" {{action 'editQuestion'}}>Edit Question</button>
     </form>
