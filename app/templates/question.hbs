@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-sm-4">
+    <img class="image"{{bind-attr src=model.image}} />
+    <h6>Asked by: {{model.name}}</h6>
+
+  </div>
+
+  <div class="col-sm-8 well">
+    <h3>{{model.title}}</h3>
+
+    <h5>{{model.description}}</h5>
+  </div>
+</div>
+
+<div class="row">
+
+  {{#if isAnswering}}
+    <div class="col-sm-12">
+      <form class="answer-form">
+        <div class="form-group">
+          <label for="answer-name">Whats your name?</label>
+          {{input  id="answer-name" class="form-control" value=answerName }}
+          <label for="answer-image">Give us a picture of you!</label>
+          {{input  id="answer-image" class="form-control" value=answerImage }}
+          <label for="answer-title">Answer Title</label>
+          {{input  id="answer-title" class="form-control" value=answerTitle }}
+          <label for="answer-description">Whats your answer?</label>
+          {{input  id="answer-description" class="form-control" value=answerDescription }}
+        </div>
+        <button class="btn btn-primary" {{action 'saveAnswer'}}>Answer!</button>
+      </form>
+    </div>
+
+  {{else}}
+    <div class="col-sm-12">
+      <button class="btn btn-primary" {{action 'addAnswer'}}>What's Your Answer?</button>
+    </div>
+  {{/if}}
+
+</div>
+
+
+{{#each answer in model.answers}}
+  <div class="row answer-row">
+    <div class="col-sm-12">
+      <img class="image-icon"{{bind-attr src=answer.answerImage}} />
+      <div class="answer-title">
+        {{#link-to 'answer' answer.id classNames='answer-link'}}{{answer.answerTitle}}{{/link-to}}
+      </div>
+      <div class="answer-name">
+        Answered by: {{answer.answerName}}
+      </div>
+      <div class="answer-description">
+        {{answer.answerDescription}}
+      </div>
+    </div>
+  </div>
+{{/each}}
