@@ -1,0 +1,12 @@
+<div class="row header">
+  Delete Answers
+</div>
+
+<div class="row">
+  {{#each answer in model}}
+    <div class="col col-sm-12 answer-row">
+      {{#link-to 'edit-answer' answer.id classNames='link'}}<div>{{answer.answerTitle}}</div>
+      Author: {{answer.answerName}}{{/link-to}}
+    </div>
+  {{/each}}
+</div>
