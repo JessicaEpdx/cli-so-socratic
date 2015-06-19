@@ -1,0 +1,39 @@
+<div class="row">
+    <button class="col-sm-12 btn question-button" {{action 'addQuestion'}}>Gotta Question?</button>
+</div>
+<div class="row">
+    <button class="col-sm-12 btn btn-warning" {{action 'seeQuestions'}}>Wanna Answer?</button>
+</div>
+
+<!-- TOGGLE ADD QUESTION FORM -->
+{{#if isQuestioning}}
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="question-form">
+        <div class="form-group">
+          <label for="name">Whats Your Name?</label>
+          {{input  id="name" class="form-control" value=name }}
+          <label for="image">Upload A Picture</label>
+          {{input  id="image" class="form-control" value=image }}
+          <label for="title">Question Title</label>
+          {{input  id="title" class="form-control" value=title }}
+          <label for="description">Question Description</label>
+          {{input  id="description" class="form-control" value=description }}
+        </div>
+        <button class="btn btn-info" {{action 'saveQuestion'}}>Add Question</button>
+      </form>
+    </div>
+  </div>
+{{/if}}
+
+<!-- TOGGLE LIST OF EXISTING QUESTIONS -->
+{{#if isViewing}}
+  {{#each}}
+    <div class="row questions">
+      <div class="col-sm-12">
+        {{#link-to 'question' id classNames='link'}}<div class="question">{{title}}</div>{{/link-to}}
+        <div class="name">Asked By:{{name}}</div>
+      </div>
+    </div>
+  {{/each}}
+{{/if}}
