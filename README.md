@@ -10,9 +10,9 @@ So-Socratic! is a question and answer board program.
 It allows users to input questions, and reply to questions, and includes a manage menu for editing questions or deleting answers.
 
 
-To add a photo to a question or reply, simply type in the URL of an online image in the appropriate form box or add an image to the "images" folder and type "images/<name of your image file>"
+To add a photo to a question or reply, simply type in the URL of an online image in the appropriate form box or add an image to the "public/assets/images" folder and type "/assets/images/<name of your image file>"
 
-It was built in Javascript & Ember.js
+Built with Ember CLI
 
 ## Prerequisites
 
